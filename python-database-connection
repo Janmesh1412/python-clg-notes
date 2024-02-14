@@ -1,0 +1,14 @@
+import mysql.connector
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="",
+  database='sem3'
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("select * from products ")
+
+for x in mycursor:
+    print(x[1])
